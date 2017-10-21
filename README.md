@@ -12,4 +12,4 @@ INSTRUCTIONS:
 7. Start a conversation with the bot, and test away!
 
 NOTE:
-I assume you have already set up your bot with Telegram's BotFather. If you have not, please complete the steps given ar api.telegram.org, and then come back here.
+I assume you have already set up your bot with Telegram's BotFather. If you have not, please complete the steps given at api.telegram.org, and then come back here.
