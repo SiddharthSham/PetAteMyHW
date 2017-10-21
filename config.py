@@ -1,1 +1,1 @@
-token = 'telegram_token'
+TOKEN = 'telegram_token'
