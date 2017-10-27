@@ -14,8 +14,6 @@ def start(bot, update):
 chatbot = ChatBot('SidiousBot', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
 
 chatbot.train('chatterbot.corpus.english')
-chatbot.train("chatterbot.corpus.english.greetings")
-chatbot.train("chatterbot.corpus.english.conversations")
 
 def chatter(bot,update):
     send = str(chatbot.get_response(update.message.text))
