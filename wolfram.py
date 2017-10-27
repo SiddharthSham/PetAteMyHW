@@ -1,5 +1,4 @@
 import requests, json
-#from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
 def query(query):
     question = query.replace(" ","+")
