@@ -1,28 +1,22 @@
 from chatterbot import ChatBot
-from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
-import config
-import logging
 
-updater = Updater(token = config.TOKEN)
-dispatcher = updater.dispatcher
+#this module is designed to allow the bot to converse in natural language with the user.
+#it uses the ChatterBot machine learning library to accomplish this
 
-logging.basicConfig(format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+chatbot = ChatBot(
+    'SidiousBot',
+    #logic_adapters=[                                                     #works normally so far
+    #    "chatterbot.logic.MathematicalEvaluation",
+    #    "chatterbot.logic.TimeLogicAdapter",
+    #    "chatterbot.logic.BestMatch"
+    #],
+    #input_adapter="chatterbot.input.VariableInputTypeAdapter",            #not yet tested                         
+    #output_adapter="chatterbot.output.OutputAdapter", 
+    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'                  #does not work with ubuntu corpus. Why?
+)
 
-def start(bot, update):
-    bot.send_message(chat_id = update.message.chat_id, text="Hi! Try talking to me!")
+#chatbot.train('chatterbot.corpus.english')                                #uncomment before execution                     
+chatbot.train()
 
-chatbot = ChatBot('SidiousBot', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
-
-chatbot.train('chatterbot.corpus.english')
-
-def chatter(bot,update):
-    send = str(chatbot.get_response(update.message.text))
-    bot.send_message(chat_id = update.message.chat_id, text = send)
-
-start_handler = CommandHandler('start', start)
-dispatcher.add_handler(start_handler)
-
-query_handler = MessageHandler(Filters.text, chatter)
-dispatcher.add_handler(query_handler)
-
-updater.start_polling()
+def chat(bot,update):
+    return str(chatbot.get_response(update.message.text))
