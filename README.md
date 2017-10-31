@@ -1,5 +1,5 @@
 # PetAteMyHW
-A telegram bot that talks to you in natural language, and returns a short summary of a given topic by using Wikipedia, Wolfram|Alpha, and other sources on command.
+A telegram bot that talks to you in natural language, can answer a wide range of questions (from Wolfram Alpha) and/or return a short summary of a topic (from Wikipedia) on command. For a demo, try SidiousBot.
 
 INSTRUCTIONS:
 
@@ -15,5 +15,5 @@ NOTE:
 I assume you have already set up your bot with Telegram's BotFather. If you have not, please complete the steps given at api.telegram.org, and then come back here.
 
 
-NOTE:
-This is experimental code. The bot performs all specified functions, but now together. Test one feature at a time. Integration pending.
+STATUS UPDATE:
+Integration complete! All features now work simultaneously. OCR coming soon... 
