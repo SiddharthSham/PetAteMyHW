@@ -1,11 +1,11 @@
 import config
 
-#This module is used for connecting to the Wolfram Alpha API
-#It defines a function that passes the query via an URL
-#returns data as gif/jpeg. Very successful in initial tests.
+#This module is used for calling the Wolfram Alpha API
+#It defines a function that constructs an URL based on the query.
+#NOTE: This module returns only the URL. This URL is passed in the bot.py file
 
 def query(query):
-    #query = query[7:]                                                      #dormant function. Integration pending.
-    question = query.replace(" ","+")
-    return  "http://api.wolframalpha.com/v1/simple?appid={}&i=".format(config.APP_ID) + question + "&format=image"
-    
+    question = query.replace(" ","+")                   #plus encoding
+    return  "http://api.wolframalpha.com/v1/simple?appid={}&i=".format(config.WOLFRAM) + question + "&format=image"
+                                                        #returns ONLY the URL directly.
+                                                        #Telegram's servers handle the requests by themselves for docs lesser than 20MB  
