@@ -1,7 +1,10 @@
 from chatterbot import ChatBot
 
-#this module is designed to allow the bot to converse in natural language with the user.
-#it uses the ChatterBot machine learning library to accomplish this
+#This module is designed to allow the bot to converse in natural language with the user.
+#It uses the ChatterBot machine learning library to accomplish this
+
+#NOTE: The bot is very naive and susceptible to user input. It quickly learns from the user, sometimes leading to inaccuracy.
+#NOTE: A vast expansion in the number of users should quickly solve this.
 
 chatbot = ChatBot(
     'SidiousBot',
@@ -15,8 +18,8 @@ chatbot = ChatBot(
     trainer='chatterbot.trainers.ChatterBotCorpusTrainer'                  #does not work with ubuntu corpus. Why?
 )
 
-#chatbot.train('chatterbot.corpus.english')                                #uncomment before execution                     
-chatbot.train()
+chatbot.train('chatterbot.corpus.english')                                #change this part to use your own training module.                    
+#chatbot.train()                                                          #returns data in a funky way. Usable, but not yet. Needs more analysis.
 
-def chat(bot,update):
-    return str(chatbot.get_response(update.message.text))
+def chat(update):
+    return str(chatbot.get_response(update))
