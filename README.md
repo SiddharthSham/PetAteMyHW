@@ -1,7 +1,9 @@
 # PetAteMyHW
-A telegram bot that talks to you in natural language, can answer a wide range of questions (from Wolfram Alpha) and/or return a short summary of a topic (from Wikipedia) on command. For a demo, try SidiousBot.
+A telegram bot that talks to you in natural language, can answer a wide range of questions (from Wolfram Alpha) and/or return a short summary of a topic (from Wikipedia) on command. 
 
-INSTRUCTIONS:
+For a demo, try SidiousBot.
+
+INSTRUCTIONS TO DEVELOP:
 
 1. Install python 3.6 on your system and add it to PATH.
 2. Using a command line, install python-telegram-bot, by : pip install python-telegram-bot
