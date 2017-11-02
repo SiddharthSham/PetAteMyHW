@@ -19,6 +19,7 @@ I assume you have already set up your bot with Telegram's BotFather. If you have
 
 STATUS UPDATE:
 Integration complete! All features now work simultaneously. OCR coming soon... 
+
 STATUS UPDATE:
 Bot deployment is nearly instantaneous now. This was achieved by using the Ubuntu Corpus.
 OCR implementation failed. It will live to see another day. :/
