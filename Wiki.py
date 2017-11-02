@@ -1,4 +1,5 @@
-import json, requests
+import json
+import requests
 
 #This module handles Wikipedia queries.
 #It will return the summary of a topic provided on its respective page.
