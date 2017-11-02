@@ -1,6 +1,6 @@
 import logging                      #imports logging module
 
-import chatter                      #this sction imports the other files required for the various features of this bot.
+import chatter                      #this section imports the other files required for the various features of this bot.
 import config
 import Wiki
 import wolfram
