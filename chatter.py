@@ -8,13 +8,40 @@ from chatterbot import ChatBot
 
 #UPDATE: Training has been shifted to the Ubuntu Corpus. Above mentioned problem has been slightly minimised.
 
+class Filter(object):                                                   #required base class for writing a custom filter
+
+    def filter_selection(self, chatterbot, session_id):
+        return chatterbot.storage.base_query
+
+
+class RepetitiveResponseFilter(Filter):                                 #ensures that the bot doesn't become very repetitive, at the cost of answer accuracy.
+
+    def filter_selection(self, chatterbot, session_id):
+
+        session = chatterbot.conversation_sessions.get(session_id)
+
+        if session.conversation.empty():
+            return chatterbot.storage.base_query
+
+        text_of_recent_responses = []
+
+        for statement, response in session.conversation:
+            text_of_recent_responses.append(response.text)
+
+        query = chatterbot.storage.base_query.statement_text_not_in(
+            text_of_recent_responses
+        )
+
+        return query
+
 chatbot = ChatBot(
     'SidiousBot',
-    #logic_adapters=[                                                     #works normally so far
-    #    "chatterbot.logic.MathematicalEvaluation",
-    #    "chatterbot.logic.TimeLogicAdapter",
-    #    "chatterbot.logic.BestMatch"
-    #],
+    filters=["chatterbot.filters.RepetitiveResponseFilter"],              #implements the filter
+    logic_adapters=[                                                      
+        "chatterbot.logic.MathematicalEvaluation",                        #allows simple math to be calculated,
+    #    "chatterbot.logic.TimeLogicAdapter",                             #works, but messes up response selection. Enable only for a valid reason
+        "chatterbot.logic.BestMatch"
+    ],
     trainer='chatterbot.trainers.UbuntuCorpusTrainer'                     #Works! Yay! Bot training is exponentially faster now.
 )
 
