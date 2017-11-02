@@ -1,7 +1,7 @@
 # PetAteMyHW
 A telegram bot that talks to you in natural language, can answer a wide range of questions (from Wolfram Alpha) and/or return a short summary of a topic (from Wikipedia) on command. 
 
-For a demo, try SidiousBot.
+For a demo, try SidiousBot (hosted on Telegram).
 
 INSTRUCTIONS TO DEVELOP:
 
@@ -10,7 +10,7 @@ INSTRUCTIONS TO DEVELOP:
 3. Download the PetAteMyHW repository.
 4. Edit the config file to use your API keys.
 5. Execute the bot.py file.
-6. On telegram, search for your bot.
+6. On Telegram, search for your bot.
 7. Start a conversation with the bot, and test away!
 
 NOTE:
@@ -19,3 +19,6 @@ I assume you have already set up your bot with Telegram's BotFather. If you have
 
 STATUS UPDATE:
 Integration complete! All features now work simultaneously. OCR coming soon... 
+STATUS UPDATE:
+Bot deployment is nearly instantaneous now. This was achieved by using the Ubuntu Corpus.
+OCR implementation failed. It will live to see another day. :/
