@@ -5,18 +5,13 @@ import config
 import Wiki
 import wolfram
 import OCR
-
-                                    #the next lines imports the telegram wrapper, and makes the functions usable. Three cheers for wrappers and APIs!
+                                  
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
-
+#This line imports the telegram wrapper, and makes the functions usable. Three cheers for wrappers and APIs!
 
 
 #This is the main module which oversees the bot.
 #API related functions are called seperately. *Only* functions directly affecting the bot are stored here.
-#Was once - """Fragile. Handle with care. :P"""
-
-#TODO: Exception handling is to be added in all modules.            #...done?
-#TODO: Add OCR module                                               #All attempts have been in vain. Feasible, but requires more time.
 
 
 
@@ -85,8 +80,8 @@ query_handler = MessageHandler(Filters.text, checker)          #handles textual 
 dispatcher.add_handler(query_handler)                          #Passes control to the main control block
 
 
-ocr_handler = MessageHandler(Filters.photo, img)               #(theoretically)handles queries in the form of images 
-dispatcher.add_handler(ocr_handler)                            #and passes control to OCR module
+ocr_handler = MessageHandler(Filters.photo, img)               #handles queries in the form of images 
+dispatcher.add_handler(ocr_handler)                            #and passes control to img module. Was designed for OCR module.
 
 
 
