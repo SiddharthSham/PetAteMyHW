@@ -21,5 +21,5 @@ STATUS UPDATE:
 Integration complete! All features now work simultaneously. OCR coming soon... 
 
 STATUS UPDATE:
-Bot deployment is nearly instantaneous now. This was achieved by using the Ubuntu Corpus.
+Bot deployment is faster now.
 OCR implementation failed. It will live to see another day. :/
