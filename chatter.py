@@ -42,10 +42,10 @@ chatbot = ChatBot(
     #    "chatterbot.logic.TimeLogicAdapter",                             #works, but messes up response selection. Enable only for a valid reason
         "chatterbot.logic.BestMatch"
     ],
-    trainer='chatterbot.trainers.UbuntuCorpusTrainer'                     #Works! Yay! Bot training is exponentially faster now.
+    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'                 #Works! Yay! Bot training is exponentially faster now.
 )
 
-#chatbot.train('chatterbot.corpus.english.conversations')                 #Should I write a custom training module here?    #Nvm, no time left now.                    
+#chatbot.train('chatterbot.corpus.english')                               #Should I write a custom training module here?    #Nvm, no time left now.                    
 chatbot.train()                                                           #Analysis complete. Some modifications allowed proper retrieval of responses. Major upgrade!!
 
 def chat(update):
