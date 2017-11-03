@@ -6,7 +6,7 @@ from chatterbot import ChatBot
 #NOTE: The bot is very naive and susceptible to user input. It quickly learns from the user, sometimes leading to inaccuracy.
 #NOTE: A vast expansion in the number of users should quickly solve this.
 
-#UPDATE: Training has been shifted to the Ubuntu Corpus. Above mentioned problem has been slightly minimised.
+#UPDATE: Training can be shifted to the Ubuntu Corpus, to minimise inaccuracy. This comes at the cost of speed and efficiency.
 
 class Filter(object):                                                   #required base class for writing a custom filter
 
