@@ -42,7 +42,7 @@ def checker(bot, update):
             try:
                 bot.send_message(chat_id = update.message.chat_id, text = Wiki.wiki(given[5:]))
             except:
-                bot.send_message(chat_id = update.message.chat_id, text = "Sorry, couldn't get you. Not that the query has to exactly match the Wikipedia article title. Please check your capitalisation.")
+                bot.send_message(chat_id = update.message.chat_id, text = "Sorry, couldn't get you. Note that the query has to exactly match the Wikipedia article title. Please check your capitalisation.")
             
     else:
         try: 
@@ -59,7 +59,7 @@ def start(bot, update):                                 #The user is greeted by 
     bot.send_message(chat_id = update.message.chat_id, text="...or we could just talk away our time, eh? ;)")
 
 def img(bot, update):
-    bot.send_message(chat_id = update.message.chat_id, text = "Images are not supported *yet*.)
+    bot.send_message(chat_id = update.message.chat_id, text = "Images are not supported *yet*.")
     bot.send_message(chat_id = update.message.chat_id, text = "But the future is looking bright!")
 
 """
